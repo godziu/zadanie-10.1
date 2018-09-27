@@ -42,6 +42,7 @@
   "dependencies": {
     "autoprefixer-cli": "^1.0.0",
     "flickity": "^2.1.2",
+    "mustache": "^3.0.0",
     "normalize.css": "^8.0.0",
     "nu-html-checker": "^0.1.0",
     "rimraf": "^2.6.2"

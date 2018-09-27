@@ -1,4 +1,22 @@
 
+var tmplMain = document.getElementById('main-carousel').innerHTML;
+var tmplItm = document.getElementById('template-items').innerHTML;
+
+Mustache.parse(tmplItm);
+
+var listItems = '';
+
+for(var i = 0; i < carouselItems.length; i++) {
+  // console.log(myObject);
+  listItems += Mustache.render(tmplItm, carouselItems[i]);
+  // console.log(listItems);
+}
+
+var fullProductList = Mustache.render(tmplMain, {carousel: listItems});
+// console.log(listItems);
+result.innerHTML = fullProductList;
+
+
 var elem = document.querySelector('.carousel');
 var flkty = new Flickity( elem, {
   // options
@@ -6,10 +24,7 @@ var flkty = new Flickity( elem, {
   contain: true
 });
 
-// element argument can be a selector string
-//   for an individual element
 var flkty = new Flickity( '.carousel', {
-  // options
 
 });
 
@@ -22,10 +37,10 @@ flkty.on( 'scroll', function( progress ) {
   progressBar.style.width = progress * 100 + '%';
 });
 
-var $carousel = $('.carousel').flickity();
+// var $carousel = $('.carousel').flickity();
 
-$('.button-group').on( 'click', '.button', function() {
-  var index = $(this).index();
-  $carousel.flickity( 'select', index );
-});
+// $('.button-group').on( 'click', '.button', function() {
+//   var index = $(this).index();
+//   $carousel.flickity( 'select', index );
+// });
 

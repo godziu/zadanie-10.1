@@ -8,49 +8,98 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="carousel"
-  data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "hash": true }'>
-		 <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://c.pxhere.com/photos/66/5b/grampians_vitoria_australia_mountains-698481.jpg!d)">
+<!-- 	<div class="main.carousel"
+  data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "hash": true }'> -->
+		 <!-- div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://c.pxhere.com/photos/66/5b/grampians_vitoria_australia_mountains-698481.jpg!d)">
 		 	<div class="container">
-		 		<p>Przykładowy tekst</p>
+		 		<p>Przykładowy tekst1</p>
 		 	</div>
 		 </div>
 		 <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://www.canon.pl/Images/Main-Header-1200x400_tcm125-1335618.jpg)">>
 		 	<div class="container">
-		 		<p>Przykładowy tekst</p>
+		 		<p>Przykładowy tekst2</p>
 		 	</div>
 		 </div>
 	     <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://www.canon.pl/Images/London-skyline-blue-header_tcm125-1379847.jpg)">>
 	     	<div class="container">
-	     		<p>Przykładowy tekst</p>
+	     		<p>Przykładowy tekst3</p>
 	     	</div>
 	     </div>
 	     <div class="carousel-cell" id="carousel-cell4" style="background-image: url(http://www.tripafryka.eu/images/x9.jpg)">>
 	     	<div class="container">
-	     		<p>Przykładowy tekst</p>
+	     		<p>Przykładowy tekst4</p>
 	     	</div>
 	     </div>
 	     <div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://www.feeltheflow.pl/files/offers/summer-chill-13/makarska3-1200x400.jpg)">>
 	     	<div class="container">
-	     		<p>Przykładowy tekst</p>
+	     		<p>Przykładowy tekst5</p>
 	     	</div>
-	     </div>
-	 </div>
+	     </div> -->
+	   <div id="result" class="carousel"></div>
+		<script id="main-carousel" type="x-tmpl-mustache">
+			{{{ carousel }}}
+		</script>
+		<script id="template-items" type="x-tmpl-mustache">
+  			<div class="carousel-cell" id="{{ id }}" style="background-image: url( '{{ image }}' )">
+    			<div class="container">
+    				<h3>{{ title }}</h3>
+    				<p>{{ description }}</p>
+				</div>  
+ 			</div>
+		</script>
+	</div>
 	 <div class="progress-bar"></div>
-	 <div>
-	 	<div class="button-group">
-  			<button class="button">1</button>
-		</div>
-	 	<p>
-		  <a href="#carousel-cell1">Cell 1</a>,
-		  <a href="#carousel-cell2">Cell 2</a>,
-		  <a href="#carousel-cell3">Cell 3</a>,
-		  <a href="#carousel-cell4">Cell 4</a>,
-		  <a href="#carousel-cell5">Cell 5</a>
-		</p>
+		 <div>
+		 	<div class="button-group">
+	  			<button class="button">Reset</button>
+			</div>
+		 	<p>
+			  <a href="#carousel-cell1">Cell 1</a>,
+			  <a href="#carousel-cell2">Cell 2</a>,
+			  <a href="#carousel-cell3">Cell 3</a>,
+			  <a href="#carousel-cell4">Cell 4</a>,
+			  <a href="#carousel-cell5">Cell 5</a>
+			</p>
+		 </div>
 	 </div>
+
+	 <script>
+	 var carouselItems = [
+	 {
+	 	image: "https://c.pxhere.com/photos/66/5b/grampians_vitoria_australia_mountains-698481.jpg!d",
+	 	title: "Lorem Ipsum",
+	 	description: "Przykładowy tekst1",
+	 	id: "carousel-cell1",
+	 },
+	 {
+	 	image: "https://www.canon.pl/Images/Main-Header-1200x400_tcm125-1335618.jpg",
+	 	title: "Lorem Ipsum",
+	 	description: "Przykładowy tekst2",
+	 	id: "carousel-cell2",
+	 },
+	 {
+	 	image: "https://www.canon.pl/Images/London-skyline-blue-header_tcm125-1379847.jpg",
+	 	title: "Lorem Ipsum",
+	 	description: "Przykładowy tekst3",
+	 	id: "carousel-cell3",
+	 },
+	 {
+	 	image: "http://www.tripafryka.eu/images/x9.jpg",
+	 	title: "Lorem Ipsum",
+	 	description: "Przykładowy tekst4",
+	 	id: "carousel-cell4",
+	 },
+	 {
+	 	image: "https://www.feeltheflow.pl/files/offers/summer-chill-13/makarska3-1200x400.jpg",
+	 	title: "Lorem Ipsum",
+	 	description: "Przykładowy tekst5",
+	 	id: "carousel-cell5"
+	 }
+  ];
+	 </script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="vendor/flickity.pkgd.min.js"></script>
-<script  src="js/script.js"></script>
+<script src="vendor/mustache.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
