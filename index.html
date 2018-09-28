@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>zadanie 10</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<link rel="stylesheet" href="vendor/flickity.css" media="screen">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<p>
+		<a href="#carousel-cell1">Cell 1</a>,
+		<a href="#carousel-cell2">Cell 2</a>,
+		<a href="#carousel-cell3">Cell 3</a>,
+		<a href="#carousel-cell4">Cell 4</a>,
+		<a href="#carousel-cell5">Cell 5</a>
+	</p>
 	   <div id="result" class="carousel"></div>
 		<script id="main-carousel" type="x-tmpl-mustache">
 			{{{ carousel }}}
@@ -21,29 +28,17 @@
  			</div>
 		</script>
 		<div id="page-wrapper" class="container">
-			<h3>My Google Maps Demo</h3>
-			<p>
-		<button id="center-map">Center map</button>
-		<button id="center-smooth">Center smoothly</button>
-			</p>
-			<p id="infos"></p>
+			
 	    	<div id="map"></div>
 		</div>
 		 <div class="progress-bar"></div>
-		 <div>
-		 	<div class="button-group">
-	  			<button class="button">Reset</button>
-			</div>
-		 	<p>
-			  <a href="#carousel-cell1">Cell 1</a>,
-			  <a href="#carousel-cell2">Cell 2</a>,
-			  <a href="#carousel-cell3">Cell 3</a>,
-			  <a href="#carousel-cell4">Cell 4</a>,
-			  <a href="#carousel-cell5">Cell 5</a>
-			</p>
+		 <p id="infos"></p>
+		 <div class="button-group">
+	  		<button class="button" id="center-map">Reset</button>
+		</div>
+
 		 </div>
 	 </div>
-
 	 <script>
 	 var carouselItems = [
 	 {
@@ -51,30 +46,35 @@
 	 	title: "Lorem Ipsum",
 	 	description: "Przykładowy tekst1",
 	 	id: "carousel-cell1",
+	 	coords: {lat: -25.363, lng: 131.044}
 	 },
 	 {
 	 	image: "https://www.canon.pl/Images/Main-Header-1200x400_tcm125-1335618.jpg",
 	 	title: "Lorem Ipsum",
 	 	description: "Przykładowy tekst2",
 	 	id: "carousel-cell2",
+	 	coords: {lat: -28.263, lng: 151.044} 
 	 },
 	 {
 	 	image: "https://www.canon.pl/Images/London-skyline-blue-header_tcm125-1379847.jpg",
 	 	title: "Lorem Ipsum",
 	 	description: "Przykładowy tekst3",
 	 	id: "carousel-cell3",
+	 	coords: {lat: -19.563, lng: 172.044}
 	 },
 	 {
 	 	image: "http://www.tripafryka.eu/images/x9.jpg",
 	 	title: "Lorem Ipsum",
 	 	description: "Przykładowy tekst4",
 	 	id: "carousel-cell4",
+	 	coords: {lat: -20.162, lng: 122.044} 
 	 },
 	 {
 	 	image: "https://www.feeltheflow.pl/files/offers/summer-chill-13/makarska3-1200x400.jpg",
 	 	title: "Lorem Ipsum",
 	 	description: "Przykładowy tekst5",
-	 	id: "carousel-cell5"
+	 	id: "carousel-cell5",
+	 	coords: {lat: -22.333, lng: 111.044} 
 	 }
   ];
 	 </script>
