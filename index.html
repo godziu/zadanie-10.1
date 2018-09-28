@@ -8,33 +8,6 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- 	<div class="main.carousel"
-  data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "hash": true }'> -->
-		 <!-- div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://c.pxhere.com/photos/66/5b/grampians_vitoria_australia_mountains-698481.jpg!d)">
-		 	<div class="container">
-		 		<p>Przykładowy tekst1</p>
-		 	</div>
-		 </div>
-		 <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://www.canon.pl/Images/Main-Header-1200x400_tcm125-1335618.jpg)">>
-		 	<div class="container">
-		 		<p>Przykładowy tekst2</p>
-		 	</div>
-		 </div>
-	     <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://www.canon.pl/Images/London-skyline-blue-header_tcm125-1379847.jpg)">>
-	     	<div class="container">
-	     		<p>Przykładowy tekst3</p>
-	     	</div>
-	     </div>
-	     <div class="carousel-cell" id="carousel-cell4" style="background-image: url(http://www.tripafryka.eu/images/x9.jpg)">>
-	     	<div class="container">
-	     		<p>Przykładowy tekst4</p>
-	     	</div>
-	     </div>
-	     <div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://www.feeltheflow.pl/files/offers/summer-chill-13/makarska3-1200x400.jpg)">>
-	     	<div class="container">
-	     		<p>Przykładowy tekst5</p>
-	     	</div>
-	     </div> -->
 	   <div id="result" class="carousel"></div>
 		<script id="main-carousel" type="x-tmpl-mustache">
 			{{{ carousel }}}
@@ -47,8 +20,12 @@
 				</div>  
  			</div>
 		</script>
-	</div>
-	 <div class="progress-bar"></div>
+		<div id="page-wrapper" class="container">
+			<h3>My Google Maps Demo</h3>
+			<p id="infos"></p>
+	    	<div id="map"></div>
+		</div>
+		 <div class="progress-bar"></div>
 		 <div>
 		 	<div class="button-group">
 	  			<button class="button">Reset</button>
@@ -101,5 +78,6 @@
 <script src="vendor/flickity.pkgd.min.js"></script>
 <script src="vendor/mustache.js"></script>
 <script src="js/script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlDLRR80XtY76S-hQr8yJoropmWflJUrE&callback=initMap"></script>
 </body>
 </html>
