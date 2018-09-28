@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title></title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -8,29 +9,28 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="carousel"
-  data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "hash": true }'>
+	<div class="main-carousel">
 		 <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://c.pxhere.com/photos/66/5b/grampians_vitoria_australia_mountains-698481.jpg!d)">
 		 	<div class="container">
 		 		<p>Przykładowy tekst</p>
 		 	</div>
 		 </div>
-		 <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://www.canon.pl/Images/Main-Header-1200x400_tcm125-1335618.jpg)">>
+		 <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://www.canon.pl/Images/Main-Header-1200x400_tcm125-1335618.jpg)">
 		 	<div class="container">
 		 		<p>Przykładowy tekst</p>
 		 	</div>
 		 </div>
-	     <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://www.canon.pl/Images/London-skyline-blue-header_tcm125-1379847.jpg)">>
+	     <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://www.canon.pl/Images/London-skyline-blue-header_tcm125-1379847.jpg)">
 	     	<div class="container">
 	     		<p>Przykładowy tekst</p>
 	     	</div>
 	     </div>
-	     <div class="carousel-cell" id="carousel-cell4" style="background-image: url(http://www.tripafryka.eu/images/x9.jpg)">>
+	     <div class="carousel-cell" id="carousel-cell4" style="background-image: url(http://www.tripafryka.eu/images/x9.jpg)">
 	     	<div class="container">
 	     		<p>Przykładowy tekst</p>
 	     	</div>
 	     </div>
-	     <div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://www.feeltheflow.pl/files/offers/summer-chill-13/makarska3-1200x400.jpg)">>
+	     <div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://www.feeltheflow.pl/files/offers/summer-chill-13/makarska3-1200x400.jpg)">
 	     	<div class="container">
 	     		<p>Przykładowy tekst</p>
 	     	</div>
@@ -39,18 +39,10 @@
 	 <div class="progress-bar"></div>
 	 <div>
 	 	<div class="button-group">
-  			<button class="button">1</button>
+  			<button id="reset" class="button">Reset</button>
 		</div>
-	 	<p>
-		  <a href="#carousel-cell1">Cell 1</a>,
-		  <a href="#carousel-cell2">Cell 2</a>,
-		  <a href="#carousel-cell3">Cell 3</a>,
-		  <a href="#carousel-cell4">Cell 4</a>,
-		  <a href="#carousel-cell5">Cell 5</a>
-		</p>
-	 </div>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="vendor/flickity.pkgd.min.js"></script>
+<script src="vendor/hash.js"></script>
 <script  src="js/script.js"></script>
 </body>
 </html>
