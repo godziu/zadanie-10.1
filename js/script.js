@@ -1,5 +1,4 @@
 
-var buttonGroup = document.querySelector('.button-group');
 var progressBar = document.querySelector('.progress-bar')
 var tmplMain = document.getElementById('main-carousel').innerHTML;
 var tmplItm = document.getElementById('template-items').innerHTML;
