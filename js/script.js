@@ -9,7 +9,6 @@ var flkty = new Flickity( '.main-carousel', {
   cellAlign: 'left',
 });
 
-var progressBar = document.querySelector('.progress-bar')
 
 flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
