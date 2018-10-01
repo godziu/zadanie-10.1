@@ -30,10 +30,11 @@
   position: absolute;
   right: 0px;
   top: 0px;
-}
-
-.button-group {
-  margin-bottom: 20px;
+  border: 0px;
+  border-radius: 12px;
+  color: white;
+  background-color: rgb(227, 76, 38);
+  cursor: pointer;
 }
 
 #map {

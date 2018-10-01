@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>zadanie 10</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
-	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<link rel="stylesheet" href="vendor/flickity.css" media="screen">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<p>
-		<a href="#carousel-cell1">Cell 1</a>,
-		<a href="#carousel-cell2">Cell 2</a>,
-		<a href="#carousel-cell3">Cell 3</a>,
-		<a href="#carousel-cell4">Cell 4</a>,
-		<a href="#carousel-cell5">Cell 5</a>
-	</p>
-	   <div id="result" class="carousel"></div>
+	   <div id="result" class="main-carousel"></div>
 		<script id="main-carousel" type="x-tmpl-mustache">
 			{{{ carousel }}}
 		</script>
@@ -27,18 +20,11 @@
 				</div>  
  			</div>
 		</script>
-		<div id="page-wrapper" class="container">
-			
 	    	<div id="map"></div>
-		</div>
 		 <div class="progress-bar"></div>
-		 <p id="infos"></p>
-		 <div class="button-group">
-	  		<button class="button" id="center-map">Reset</button>
-		</div>
-
+		 <div>
+		 	<button id="reset" class="button"> Reset </button>
 		 </div>
-	 </div>
 	 <script>
 	 var carouselItems = [
 	 {
@@ -80,6 +66,7 @@
 	 </script>
 <script src="vendor/flickity.pkgd.min.js"></script>
 <script src="vendor/mustache.js"></script>
+<script src="vendor/hash.js"></script>
 <script src="js/script.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlDLRR80XtY76S-hQr8yJoropmWflJUrE&callback=initMap"></script>
 </body>
