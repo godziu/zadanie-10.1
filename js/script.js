@@ -46,11 +46,11 @@ window.initMap = function() {
 			map.setZoom(10);
 		});		
 	};
-	
+
  	for(let key in carouselItems){
         var allMarkers = new google.maps.Marker({position: carouselItems[key].coords, map: map});
         allMarkers.addListener('click', function(){
-        flkty.select(key);
+        	flkty.select(key);
      });  
     }
 }
