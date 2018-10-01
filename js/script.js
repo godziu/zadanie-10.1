@@ -30,19 +30,27 @@ document.querySelector('#reset').addEventListener('click', function() {
 });
 
 window.initMap = function() {
-  var map = new google.maps.Map(document.getElementById('map'),
-  	{zoom: 4, center: carouselItems[0].coords});
+	var map = new google.maps.Map(document.getElementById('map'),{
+		zoom: 4, center: carouselItems[0].coords
+	});
 
 	for (var i = 0; i < carouselItems.length; i++) {
 		var marker = new google.maps.Marker({
 			position: carouselItems[i].coords,
 			map: map
-	});
+		});
 
-	flkty.on('change', function(i){
-		flkty.select(i);
-		map.panTo(carouselItems[i].coords);
-		map.setZoom(10);
+		flkty.on('change', function(i){
+			flkty.select(i);
+			map.panTo(carouselItems[i].coords);
+			map.setZoom(10);
 		});		
-	}(i);
+	};
+	
+ 	for(let key in carouselItems){
+        var allMarkers = new google.maps.Marker({position: carouselItems[key].coords, map: map});
+        allMarkers.addListener('click', function(){
+        flkty.select(key);
+     });  
+    }
 }
