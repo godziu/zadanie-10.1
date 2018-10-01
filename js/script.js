@@ -1,5 +1,5 @@
-'use strict';
 
+var progressBar = document.querySelector('.progress-bar')
 var tmplMain = document.getElementById('main-carousel').innerHTML;
 var tmplItm = document.getElementById('template-items').innerHTML;
 
@@ -11,66 +11,38 @@ for(var i = 0; i < carouselItems.length; i++) {
   listItems += Mustache.render(tmplItm, carouselItems[i]);
 }
 
-
-var infos = document.getElementById('infos');
-
-window.initMap = function() {
-	// W zmiennej map zapisujemy nowa instancje obiektu Map. 
-	var map = new google.maps.Map(document.getElementById('map'), {
-		// Podajemy opcje mapy, np zoom i punkt wycentrowania mapy.
-		zoom: 4,
-		center: carouselItems[0].coords
-	});
-	
-	document.getElementById('center-map').addEventListener('click', function(event){
-		event.preventDefault();
-		map.panTo(carouselItems[0].coords);
-		map.setZoom(10);
-	})
-
-	// petla dodajaca marker do kazdego slajdu
-	for (var i = 0; i < carouselItems.length; i++) {
-		var marker = new google.maps.Marker({
-			position: carouselItems[i].coords,
-			map: map
-		});
-		(function(i){
-			marker.addListener('click', function(event){
-			infos.innerHTML = 'You clicked - ' + carouselItems[i].description;
-			flkty.select(i);
-
-			
-		});
-		
-		flkty.on('change', function(i){
-				flkty.select(i);
-				map.panTo(carouselItems[i].coords);
-				map.setZoom(10);
-		});
-		
-		})(i);
-		
-
-	}
-}
-
 var fullProductList = Mustache.render(tmplMain, {carousel: listItems});
 result.innerHTML = fullProductList;
 
-
-var elem = document.querySelector('.carousel');
-var flkty = new Flickity( elem, {
-  // options
+var flkty = new Flickity( '.main-carousel', {
+  pageDots: false,
+  hash: true,
   cellAlign: 'left',
-  contain: true
 });
-
-
-var flkty = new Flickity('.carousel');
-
-var progressBar = document.querySelector('.progress-bar')
 
 flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
+
+document.querySelector('#reset').addEventListener('click', function() {
+  flkty.select(0);
+});
+
+window.initMap = function() {
+  var map = new google.maps.Map(document.getElementById('map'),
+  	{zoom: 4, center: carouselItems[0].coords});
+
+	for (var i = 0; i < carouselItems.length; i++) {
+		var marker = new google.maps.Marker({
+			position: carouselItems[i].coords,
+			map: map
+	});
+
+	flkty.on('change', function(i){
+		flkty.select(i);
+		map.panTo(carouselItems[i].coords);
+		map.setZoom(10);
+		});		
+	}(i);
+}
