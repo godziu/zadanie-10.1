@@ -31,7 +31,7 @@ document.querySelector('#reset').addEventListener('click', function() {
 
 window.initMap = function() {
 	var map = new google.maps.Map(document.getElementById('map'),{
-		zoom: 4, center: carouselItems[0].coords
+		zoom: 8, center: carouselItems[0].coords
 	});
 
 	for (var i = 0; i < carouselItems.length; i++) {
@@ -51,6 +51,6 @@ window.initMap = function() {
         var allMarkers = new google.maps.Marker({position: carouselItems[key].coords, map: map});
         allMarkers.addListener('click', function(){
         	flkty.select(key);
-     });  
+    	});  
     }
 }
