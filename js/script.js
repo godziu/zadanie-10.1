@@ -1,5 +1,5 @@
 
-var progressBar = document.querySelector('.progress-bar')
+var progressBar = document.querySelector('.progress-bar');
 var tmplMain = document.getElementById('main-carousel').innerHTML;
 var tmplItm = document.getElementById('template-items').innerHTML;
 
@@ -41,7 +41,6 @@ window.initMap = function() {
 		});
 
 		flkty.on('change', function(i){
-			flkty.select(i);
 			map.panTo(carouselItems[i].coords);
 			map.setZoom(10);
 		});		
